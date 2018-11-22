@@ -1,7 +1,6 @@
-<a href="https://travis-ci.org/pithyone/miniprogram-datepicker"><img alt="Travis Status" src="https://img.shields.io/travis/pithyone/miniprogram-datepicker/master.svg?style=flat-square"></a>
-<a href="https://www.npmjs.com/package/miniprogram-datepicker"><img alt="npm" src="https://img.shields.io/npm/v/miniprogram-datepicker.svg?style=flat-square"></a>
-
 # miniprogram-datepicker
+
+forked from [pithyone/miniprogram-datepicker](https://github.com/pithyone/miniprogram-datepicker)
 
 小程序日期选择器，使用小程序原生picker，支持农历。
 
@@ -16,7 +15,7 @@
 1. 安装 datepicker
 
 ```
-npm install --save miniprogram-datepicker
+npm install --save @carpenter/miniprogram-datepicker
 ```
 
 2. 在需要使用 datepicker 的页面 page.json 中添加 datepicker 自定义组件配置
@@ -24,7 +23,7 @@ npm install --save miniprogram-datepicker
 ```json
 {
   "usingComponents": {
-    "datepicker": "miniprogram-datepicker"
+    "datepicker": "@carpenter/miniprogram-datepicker"
   }
 }
 ```
