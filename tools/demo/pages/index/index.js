@@ -1,16 +1,20 @@
 Page({
   data: {
     solar: '',
-    lunar: '2016-09-01',
+    lunar: '',
   },
   bindSolarChange(e) {
+    const {value, data} = e.detail
     this.setData({
-      solar: e.detail.value,
+      solar: value
     })
+    console.log(data)
   },
   bindLunarChange(e) {
+    const {value, data} = e.detail
     this.setData({
-      lunar: e.detail.value,
+      lunar: value,
     })
+    console.log(data)
   },
 })

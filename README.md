@@ -49,5 +49,31 @@ datepicker 提供`<slot>`节点，用于承载组件引用时提供的子节点�
 | value                   | String       | ''                    | 表示选中的日期，格式为"YYYY-MM-DD"                           |
 | chinese                 | Boolean      | false                 | 是否农历                                                   |
 | picker-class            | String       |                       | 外部样式类                                                 |
-| bindchange              | EventHandle  |                       | value 改变时触发 change 事件，event.detail = {value: value} |
+| bindchange              | EventHandle  |                       | value 改变时触发 change 事件，event.detail = {value, data} |
 
+
+> value = 2018-11-22  
+> data
+``` json
+{
+  "Animal": "狗"
+  "IDayCn": "十五"
+  "IMonthCn": "十月"
+  "Term": "小雪"
+  "astro": "射手座"
+  "cDay": 22
+  "cMonth": 11
+  "cYear": 2018
+  "gzDay": "戊午"
+  "gzMonth": "癸亥"
+  "gzYear": "戊戌"
+  "isLeap": false
+  "isTerm": true
+  "isToday": true
+  "lDay": 15
+  "lMonth": 10
+  "lYear": 2018
+  "nWeek": 4
+  "ncWeek": "星期四"
+}
+```
