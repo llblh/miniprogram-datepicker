@@ -1,8 +1,9 @@
 const calendar = require('utils/calendar')
 
 const start = 1901
-const years = Array.from(new Array(200), (val, index) => index + start + '年')
-const months = Array.from(new Array(12), (val, index) => index + 1 + '月')
+const years = Array.from(new Array(200), (val, index) => `${index + start}年`)
+const months = Array.from(new Array(12), (val, index) => `${index + 1}月`)
+const chinaYears = Array.from(new Array(200), (val, index) => `${calendar.toGanZhiYear(index + start)}(${index + start})年`)
 const chinaMonths = Array.from(new Array(12), (val, index) => calendar.toChinaMonth(index + 1))
 
 Component({
@@ -80,7 +81,7 @@ Component({
         [y, m, d] = [day.lYear, day.lMonth, day.lDay]
         const days = this._computedMonthDays(y, m)
         this.setData({
-          multiArray: [years, chinaMonths, days],
+          multiArray: [chinaYears, chinaMonths, days],
           multiIndex: [y - start, m - 1, d - 1],
         })
       } else {
