@@ -27,14 +27,17 @@ Component({
   },
   methods: {
     _bindchange(e) {
+      const value = e.detail.value
       this.setData({
-        multiIndex: e.detail.value,
+        multiIndex: value,
       })
 
-      const value = e.detail.value
       const [y, m, d] = [value[0] + start, value[1] + 1, value[2] + 1]
-
-      this.triggerEvent('change', {value: y + '-' + this._fill(m) + '-' + this._fill(d)})
+      let data = calendar.solar2lunar(y, m, d)
+      if (this.properties.chinese) {
+        data = calendar.lunar2solar(y, m, d)
+      }
+      this.triggerEvent('change', {value: `${y}-${this._fill(m)}-${this._fill(d)}`, data})
     },
     _bindcolumnchange(e) {
       const multiArray = this.data.multiArray
